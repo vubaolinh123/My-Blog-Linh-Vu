@@ -1,0 +1,14 @@
+.main-section {
+    background: var(--bg-main);
+    color: var(--text-main)
+}
+.main-container {
+    @apply space-y-6 md:space-y-0 md:grid grid-cols-[3fr_1fr] gap-10 py-10;
+    background: var(--bg-main);
+    color: var(--text-main)
+}
+.main-content {
+    @apply p-6 border border-gray-200 shadow-[0_0_4px_1px_#d8d8d8];
+    background: var(--bg-main-content);
+    color: var(--text-main)
+}

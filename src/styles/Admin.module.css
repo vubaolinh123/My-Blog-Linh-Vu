@@ -1,0 +1,183 @@
+.header-top-table {
+    @apply flex justify-between items-center mb-2
+}
+.title-admin {
+    @apply text-xl text-green-700
+}
+.header-action{
+    @apply flex justify-between items-center space-x-2
+}
+.ellipsis{
+    @apply truncate
+}
+/* btn in action table */
+.btn-action-container {
+    @apply space-x-6 text-center
+}
+
+/* form */
+
+.form-content-section--grid {
+    @apply grid grid-cols-[2.2fr_1fr] gap-4
+}
+
+.form-content--grid-col-2{
+    @apply grid grid-cols-2 gap-4
+}
+.form-content--grid-col-2 .form-input-section {
+    @apply mt-2
+}
+.form-content-section label {
+    @apply pr-2
+}
+
+.form-content-section .form__img {
+    @apply max-w-full max-h-[260px] object-cover rounded mx-auto my-2
+}
+.form-input-section +.form-input-section{
+    @apply mt-2
+}
+.form-input-section--button {
+    @apply space-x-2
+}
+.form__select {
+    @apply w-full py-1.5 rounded outline-none
+}
+.form__label {
+    @apply w-full text-gray-600
+}
+.form__label--file {
+    @apply block mb-2 text-sm font-medium text-gray-900 border-none
+}
+.form__input {
+    @apply block w-full max-w-full p-1.5 rounded-sm outline-none bg-white
+}
+.form__input--disable {
+    @apply bg-gray-100 border break-all border-gray-300 text-gray-900 text-sm cursor-not-allowed min-h-[34px]
+}
+.form__input[type="file"] {
+    @apply block w-full p-1.5 text-xs text-gray-900 bg-slate-50 rounded border border-gray-300 cursor-pointer
+}
+.form__textarea {
+    @apply block w-full min-h-[100px] rounded outline-none p-1.5
+}
+.form__text-error {
+    @apply block capitalize text-red-500
+}
+.form-upload-section {
+    @apply flex
+}
+.form-upload-section .form__input-upload {
+    @apply inline-block mx-auto
+}
+
+
+.form-input-area {
+    @apply flex justify-between items-center
+}
+
+.form-input-area input {
+    @apply border border-r-0 border-gray-200 rounded-r-[0]
+}
+
+.form-input-area span {
+    @apply p-[7px] inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-r border border-l-0 border-gray-300
+}
+
+/* badge */
+.badge {
+    @apply p-2 py-1 rounded-[100px]
+}
+.badge--primary {
+    @apply bg-blue-100 text-blue-500
+}
+.badge--success {
+    @apply bg-green-100 text-green-500
+}
+.badge--danger {
+    @apply bg-red-100 text-red-500
+}
+
+/* Select Multipe Options */
+.select-btn{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.select-btn .btn-text{
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+.select-btn .arrow-dwn{
+    display: flex;
+    height: 21px;
+    width: 21px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #6e93f7;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.select-btn.open .arrow-dwn{
+    transform: rotate(-180deg);
+}
+.list-items{
+    position: relative;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+.select-btn.open ~ .list-items{
+    display: block;
+}
+.list-items .item{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 5px;
+    border-radius: 8px;
+}
+.list-items .item:hover{
+    background-color: #e7edfe;
+}
+.item .item-text{
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+}
+.item .checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1.5px solid #c0c0c0;
+    transition: all 0.3s ease-in-out;
+}
+
+.checkbox .check-icon{
+    color: #fff;
+    font-size: 11px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+.item.checked .check-icon{
+    transform: scale(1);
+}

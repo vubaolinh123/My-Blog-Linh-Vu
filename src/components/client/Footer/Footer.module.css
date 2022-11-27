@@ -1,0 +1,37 @@
+.footer {
+    background: var(--bg-footer);
+    color: var(--text-footer);
+}
+.footer-main {
+    @apply py-10
+}
+.footer-main-grid {
+    @apply grid gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.4fr_0.6fr_1fr]
+}
+.logo__img {
+    @apply w-20
+}
+.footer-title {
+    @apply  mb-4 font-semibold uppercase text-xl text-[#464646]
+}
+.footer-menu-item {
+    @apply mb-4
+}
+.footer-menu-item:last-child {
+    @apply mb-0
+}
+.footer-menu-item-link {
+    color: var(--text-link-footer);
+}
+.footer-social-list {
+    @apply flex justify-start space-x-6
+}
+.footer-social-icon {
+    @apply text-2xl
+}
+.footer-form-search {
+    @apply mt-4
+}
+.footer-bottom {
+    @apply p-2 text-center bg-gray-400
+}

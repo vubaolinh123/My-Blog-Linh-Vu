@@ -1,0 +1,80 @@
+.header-top {
+    background: var(--bg-top);
+    @apply hidden py-2 md:block;
+}
+.header-top-container, .header-social-list {
+    @apply flex items-center justify-end;
+}
+.header-social-item{
+    color: var(--text-top);
+    @apply pr-4 font-light;
+}
+.header-form {
+    @apply hidden md:block
+}
+
+.header-main {
+    @apply py-6;
+    background: var(--bg-header)
+}
+.header-main-container {
+    @apply text-center;
+}
+.header-main-container, .logo {
+    @apply items-center justify-between md:gap-4 md:flex;
+}
+.logo__img {
+    @apply mb-2 md:m-0 inline-block w-full max-w-[100px] h-full object-contain pr-2
+}
+.logo__text {
+    @apply text-center md:text-left;
+}
+.logo__text .logo__text-main {
+    @apply block text-5xl;
+}
+.logo__text-main, .logo__text-sub {
+    color: var(--text-logo);
+}
+.nav-menu .menu-list {
+    @apply items-center justify-end hidden lg:flex;
+}
+
+.nav-menu .menu-list .menu-item {
+    @apply pl-6;
+}
+.nav-menu .menu-list .menu-item-link {
+    @apply  text-lg duration-300;
+    color: var(--text-menu);
+}
+.nav-menu .menu-list .menu-item:first-child {
+    @apply pl-0
+}
+.nav-menu .menu-list .menu-item:hover .menu-item-link{
+    color: var(--text-menu-hover);
+}
+
+.nav-menu-btn {
+    @apply inline-flex items-center py-2 space-x-1 lg:hidden;
+    color: var(--btn-menu)
+}
+.nav-menu-btn span {
+    @apply text-2xl
+}
+.nav-menu-icon {
+    @apply text-3xl
+}
+.icon-menu-1 {
+    color: var(--icon-sun);
+}
+.icon-menu-2 {
+    color: var(--icon-folder);
+}
+.icon-menu-3 {
+    color: var(--icon-gear);
+}
+.icon-menu-4 {
+    color: var(--icon-img);
+}
+.icon-menu-5 {
+    color: var(--icon-blog);
+}

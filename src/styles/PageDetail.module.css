@@ -1,0 +1,67 @@
+.detail-content__img {
+    @apply w-full h-full max-h-[500px] object-cover
+}
+.detail-content__desc-short {
+    @apply my-6
+}
+.detail-content-line {
+    @apply mb-8 border border-y border-y-gray-400;
+}
+.detail-content-info-bottom {
+    @apply my-8
+}
+.related-posts__title-section, .detail-content__title-section {
+    @apply text-xl font-[600] mb-3 pt-6 border-t-[1.5px]
+}
+.related-post__title + .related-post__title {
+    @apply mt-2;
+
+}
+.related-post__title-link {
+    @apply text-xl;
+
+    color: var(--text-main-link);
+}
+.detail-content__title-section {
+    @apply mt-6
+}
+
+/* comment */
+.detail-content-comment-item {
+    @apply grid grid-cols-[auto_1fr] gap-4
+}
+.detail-content-comment-item + .detail-content-comment-item {
+    @apply mt-3
+}
+.detail-content-comment-item__img {
+    @apply w-12 h-12 object-cover rounded-full
+}
+.detail-content-comment-item-text {
+    @apply p-2 border border-gray-200 rounded
+}
+.detail-content-comment-item-name {
+    @apply font-bold
+}
+.detail-content-comment-item-datetime {
+    @apply opacity-80 pl-3 text-sm
+}
+/* comment form */
+.detail-content__title-section.detail-content__title-section-form {
+    @apply text-3xl
+}
+.detail-content-comment-form {
+    @apply space-y-2 mt-4
+}
+.detail-content-comment-form-btn {
+    @apply text-right
+}
+.detail-content-comment-form__btn {
+    @apply inline-block px-6 py-2 text-lg text-indigo-100 rounded-md;
+    background: var(--text-main-link);
+}
+.show-error {
+    @apply text-red-500
+}
+.send-success {
+    @apply border border-green-400 rounded p-3 my-3 bg-green-100
+}

@@ -1,0 +1,146 @@
+.setting-ui-content {
+  @apply space-y-1
+}
+.setting-ui-container {
+  @apply grid md:grid-cols-[1.5fr_2fr] lg:grid-cols-[1fr_2fr] md:gap-3;
+}
+.setting-ui-container > div {
+  @apply bg-white h-full
+}
+.setting-ui-container h2 {
+  @apply text-xl p-2
+}
+.setting__img-logo {
+  margin: auto;
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.setting-ui-content {
+  @apply bg-white p-2 rounded-[2px];
+}
+
+.setting-color-main {
+  @apply flex items-center justify-between mt-1 space-x-2;
+}
+
+.setting-color-slice {
+  @apply px-2;
+}
+
+.setting-color-item {
+  @apply flex items-center justify-between space-x-1;
+}
+
+/* .setting-color-slice-item {
+  @apply grid items-center justify-between grid-cols-2 gap-1;
+} */
+.setting-color-slice-item {
+  @apply flex items-center justify-between gap-1;
+}
+.setting-color-slice-item + .setting-color-slice-item { 
+  @apply border-t
+}
+.setting-color-shape,
+.setting-color-slice-shape {
+  @apply inline-block bg-green-500 rounded-full;
+}
+
+.setting-color-shape {
+  @apply w-8 h-8;
+}
+
+.setting-color-slice-shape {
+  @apply w-6 h-6;
+}
+
+.setting-color-code {
+  @apply border-gray-200 border-b-2 w-[80%];
+}
+
+.setting-color-slice-item .setting-color-code {
+  @apply w-full;
+}
+
+.setting-color-slice__label {
+  @apply w-fit;
+}
+
+.setting-color-choose {
+  @apply flex items-center justify-start gap-2;
+}
+
+.setting-color-slice__input-section {
+  @apply flex items-center justify-start gap-2;
+
+}
+/*------ Style input color ------*/
+.setting-color__input-color {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  @apply w-[30px] h-9 bg-transparent border-none appearance-none cursor-pointer;
+}
+
+.setting-color__input-color::-webkit-color-swatch {
+  border-radius: 50%;
+  border: 1px solid #9a9999;
+}
+
+.setting-color__input-color::-moz-color-swatch {
+  border-radius: 50%;
+}
+
+/* view */
+.setting-ui-content-view {
+  @apply sticky top-10 mx-6
+}
+.setting-ui-content-view .setting-ui-content-view-container{
+  @apply w-full max-h-full 
+}
+.setting-ui-content-view-header .setting-ui-content-view-header-top{
+  @apply w-full h-8 bg-white text-center
+}
+.setting-ui-content-view-header-main {
+  @apply w-full h-20 bg-gray-800 flex justify-between items-center p-2
+}
+.setting-ui-content-view-header-img {
+  @apply object-cover w-16 h-16;
+}
+.setting-ui-content-view-header-logo {
+  @apply flex justify-between items-center gap-1
+}
+.setting-ui-content-view-header-menu {
+  @apply flex justify-between items-center gap-3 m-0
+}
+.setting-ui-content-view-main {
+  @apply grid grid-cols-[2fr_1fr] gap-3 px-8 py-3 bg-gray-200
+}
+.setting-ui-content-view-main-inside {
+  @apply bg-white shadow-sm p-1 h-40
+}
+.setting-ui-content-view-footer {
+  @apply p-3 flex justify-between items-center bg-gray-500
+}
+.setting-ui-content-view-footer-img {
+  @apply object-cover w-10 h-10;
+}
+/* icon */
+.setting-ui-content-icon-item {
+  @apply p-3 inline-flex justify-between items-center
+}
+/* button */
+.setting-ui-content-button .setting-ui-content-button-container {
+  @apply p-3 md:inline-flex justify-between items-center  
+}
+.setting-ui-content-button-container-item {
+  @apply sm:inline-flex justify-between items-center 
+}
+.setting-ui-content-button-item {
+  @apply border mx-3 p-3 rounded-xl text-white bg-blue-800
+}
+
+.setting-button-section {
+  @apply text-right mt-3
+}
+

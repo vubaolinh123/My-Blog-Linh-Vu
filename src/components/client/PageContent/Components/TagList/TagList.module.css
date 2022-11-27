@@ -1,0 +1,10 @@
+.page-content-item__tags-icon {
+    @apply text-xl;
+    color: var(--text-main-link)
+}
+.page-content-item__tag-list {
+    @apply inline-block ml-1
+}
+.page-content-item__tag-item {
+    color: var(--text-main-link)
+}

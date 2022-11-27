@@ -1,0 +1,10 @@
+.logo-container {
+    @apply p-3 flex justify-start items-center gap-1
+}
+.logo-container .logo {
+    @apply w-12 max-w-full h-12 object-cover
+}
+.logo-text {
+    @apply text-xl text-center text-white;
+
+}

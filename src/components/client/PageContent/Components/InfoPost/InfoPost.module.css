@@ -1,0 +1,6 @@
+.page-content-item__info {
+    @apply mt-4
+}
+.page-content-item__info-item {
+    color: var(--text-main-link)
+}

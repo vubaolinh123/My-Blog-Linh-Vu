@@ -1,0 +1,12 @@
+.search__form {
+    @apply min-w-[220px] flex items-center justify-between px-3 py-1 bg-white border-[1.2px] border-gray-400 rounded-[6px];
+}
+.search__input {
+    @apply outline-none bg-white w-full text-gray-800
+}
+.search__input::placeholder {
+    @apply text-sm ;
+}
+.search__btn {
+    @apply text-gray-500
+}

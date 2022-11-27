@@ -1,0 +1,20 @@
+.aside {
+    @apply h-fit p-6 border border-gray-200 shadow-[0_0_4px_1px_#d8d8d8];
+    background: var(--bg-main-content);
+}
+.aside-section {
+    @apply mt-6;
+
+}
+.aside__title-section {
+    @apply py-2 text-2xl font-bold normal-case;
+}
+.aside__title-section:first-letter {
+    @apply uppercase;
+}
+.aside-post-list {
+    @apply space-y-3
+}
+.aside-post-item-link {
+    color: var(--aside-link)
+}

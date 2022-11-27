@@ -1,0 +1,12 @@
+.nav-container {
+    @apply bg-[#001529] p-2 min-h-[40px] flex justify-between items-center text-white
+}
+.nav-action {
+    @apply space-x-2 flex justify-between items-center
+}
+.nav__img {
+    @apply h-8 w-8 bg-slate-100 rounded-full cursor-pointer
+}
+.nav__icon {
+    @apply text-xl cursor-pointer
+}

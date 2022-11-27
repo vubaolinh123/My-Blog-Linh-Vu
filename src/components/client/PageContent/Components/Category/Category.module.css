@@ -1,0 +1,11 @@
+.page-content-item__category {
+    @apply mt-1 md:mt-0;
+
+}
+.page-content-item__category, .page-content-item__category-link {
+    @apply text-lg
+}
+.page-content-item__category-link {
+    color: var(--text-main-link);
+
+}
