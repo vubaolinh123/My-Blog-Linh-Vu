@@ -24,6 +24,7 @@
     @apply items-center justify-between md:gap-4 md:flex;
 }
 .logo__img {
+    border-radius: 15px;
     @apply mb-2 md:m-0 inline-block w-full max-w-[100px] h-full object-contain pr-2
 }
 .logo__text {

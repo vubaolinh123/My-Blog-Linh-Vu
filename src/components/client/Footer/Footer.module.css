@@ -9,6 +9,7 @@
     @apply grid gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.4fr_0.6fr_1fr]
 }
 .logo__img {
+    border-radius: 15px;
     @apply w-20
 }
 .footer-title {
