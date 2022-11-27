@@ -5,8 +5,8 @@ const nextConfig = {
     async rewrites() {
         return [
             {
-                source: process.env.NEXT_PUBLIC_SOURCE_API,
-                destination: process.env.NEXT_PUBLIC_URL_PROXY_BACK_END, // Proxy to Backend
+                source: '/api/:path*',
+                destination: 'https://project-blog-api.vercel.app/api/:path*', // Proxy to Backend
             },
         ];
     },
