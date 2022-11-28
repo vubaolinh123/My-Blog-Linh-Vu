@@ -8,7 +8,7 @@ type Props = {
 const PageHeader = ({ title }: Props) => {
   return (
     <div className={styles["page-title-section"]}>
-      <h2 className={styles["page__title"]}>{title}</h2>
+      <h1 className={styles["page__title"]}>{title}</h1>
     </div>
   );
 };

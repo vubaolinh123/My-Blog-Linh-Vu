@@ -52,7 +52,7 @@ const PageContentDetail: NextPage<DetailProps> = ({
   return (
     <div>
         <HeadMeta title={dataDetailBlog.title}/>
-      <PageHeader title={dataDetailBlog.title} />
+        <PageHeader title={dataDetailBlog.title} />
       <div className={styles["detail-content-section"]}>
         <div className={styles["detail-content-img"]}>
           <img
