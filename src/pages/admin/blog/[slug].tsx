@@ -12,9 +12,10 @@ import useCateBlog from "../../../hooks/use-cateBlog";
 import stylesAdmin from "../../../styles/Admin.module.css";
 import useTag from "../../../hooks/use-tag";
 import dynamic from "next/dynamic";
-const ReactQuill = dynamic(import("react-quill"), { ssr: false });
-import "react-quill/dist/quill.snow.css";
+// const ReactQuill = dynamic(import("react-quill"), { ssr: false });
+// import "react-quill/dist/quill.snow.css";
 import { useRouter } from "next/router";
+import Editor from "../../../components/admin/Editor/Editor";
 
 var slugRender = require("slug");
 
@@ -104,21 +105,6 @@ const EditBlog = (props: Props) => {
   if (!dataBlog) return <div>Loading...</div>;
   if (!tagBlog) return <div>Loading...</div>;
 
-  const modules = {
-    toolbar: [
-      [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
-      [{size: []}],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{'list': 'ordered'}, {'list': 'bullet'}, 
-       {'indent': '-1'}, {'indent': '+1'}],
-      ['link', 'video'],
-      ['clean']
-    ],
-    clipboard: {
-      // toggle to add extra line breaks when pasting HTML:
-      matchVisual: false,
-    }
-  };
 
   const formats = [
     'header', 'font', 'size',
@@ -335,14 +321,13 @@ const EditBlog = (props: Props) => {
             <div className={stylesAdmin["form-input-section"]}>
               <label>Nội dung bài viết</label>
               <div className="">
-                <ReactQuill
-                  theme="snow"
-                  value={valueDesc}
-                  onChange={setValueDesc}
-                  placeholder="Nhập nội dung bài viết"
-                  modules={modules}
-                  formats={formats}
-                />
+                <Editor
+                  name="ckeditor"
+                  onChange={(data: any) => {
+                    setValueDesc(data);
+                  }}
+                  htmlData={valueDesc}
+                /> 
               </div>
             </div>
             <div

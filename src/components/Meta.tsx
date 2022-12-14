@@ -16,7 +16,7 @@ const HeadMeta = ({title, desc}: Props) => {
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet"/>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"/>
-      <link rel="icon" href="http://res.cloudinary.com/hinalink/image/upload/v1669582283/dv4cefsfceh9xrzjuexb.jpg" />
+      <link rel="icon" href="https://res.cloudinary.com/hinalink/image/upload/v1669582283/dv4cefsfceh9xrzjuexb.jpg" />
     </Head>
   )
 }

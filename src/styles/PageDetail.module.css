@@ -1,3 +1,9 @@
+.detail-page ol, .detail-page ul {
+    list-style: revert !important;
+    margin: 0;
+    padding: 0;
+}
+
 .detail-content__img {
     @apply w-full h-full max-h-[500px] object-cover
 }

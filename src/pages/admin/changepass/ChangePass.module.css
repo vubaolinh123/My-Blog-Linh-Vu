@@ -1,0 +1,30 @@
+.login-form-container {
+    @apply bg-cover
+    h-screen flex bg-[url('https://bizflyportal.mediacdn.vn/bizflyportal/image_general/1/2020/03/17/00/14/bg-15843572859441.png')]
+}
+.login-form {
+    @apply bg-slate-100 w-[400px] p-8 m-auto rounded
+}
+.login-form-title {
+    @apply text-center text-xl
+}
+.login-form-back-home__img {
+    @apply w-full h-16 inline-block mx-auto object-contain
+}
+.login-form-forgot {
+    @apply text-right
+}
+
+/* btn */
+.login-form-button-container {
+    @apply space-y-1 !mt-5
+}
+.login-form-button {
+    @apply w-full rounded-sm
+}
+.login-form-button--gg {
+    @apply bg-red-500 text-white p-1.5 duration-300
+}
+.login-form-button--gg:hover {
+    @apply bg-red-400
+}

@@ -12,9 +12,10 @@ import useCateBlog from "../../../hooks/use-cateBlog";
 import stylesAdmin from "../../../styles/Admin.module.css";
 import useTag from "../../../hooks/use-tag";
 import dynamic from "next/dynamic";
-const ReactQuill = dynamic(import("react-quill"), { ssr: false });
-import "react-quill/dist/quill.snow.css";
+// const ReactQuill = dynamic(import("react-quill"), { ssr: false });
+// import "react-quill/dist/quill.snow.css";
 import { useRouter } from "next/router";
+import Editor from "../../../components/admin/Editor/Editor";
 
 var slug = require("slug");
 
@@ -29,6 +30,7 @@ const AddBlog = (props: Props) => {
   const [openBoxBlog, setOpenBoxBlog] = useState(false);
   const [valueArrayIdTag, setValueArrayIdTag] = useState<any>([]);
   const [valueArrayIdCate, setValueArrayIdCate] = useState<any>([]);
+  const [editorLoaded, setEditorLoaded] = useState(false);
   const [valueDesc, setValueDesc] = useState("");
 
   const CLOUDINARY_API: any =
@@ -47,7 +49,9 @@ const AddBlog = (props: Props) => {
     formState: { errors },
   } = useForm();
 
-  useEffect(() => {}, [image]);
+  useEffect(() => {
+    setEditorLoaded(true)
+  }, [image]);
 
   if (errorBlog) return <div className="">{errorTag}</div>;
   if (errorBlog) return <div className="">{errorBlog}</div>;
@@ -288,14 +292,21 @@ const AddBlog = (props: Props) => {
             <div className={stylesAdmin["form-input-section"]}>
               <label>Nội dung bài viết</label>
               <div className="">
-                <ReactQuill
+                {/* <ReactQuill
                   theme="snow"
                   value={valueDesc}
                   onChange={setValueDesc}
                   placeholder="Nhập nội dung bài viết"
                   modules={modules}
                   formats={formats}
-                />
+                /> */}
+                <Editor
+                  name="ckeditor"
+                  onChange={(data: any) => {
+                    setValueDesc(data);
+                  }}
+                  htmlData={valueDesc}
+                /> 
               </div>
             </div>
             <div

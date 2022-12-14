@@ -1,4 +1,9 @@
 const Icon = {
+    QuestionCircleFill({ className, ...props }: any) {
+        return (
+            <i {...props} className={`bi bi-question-circle-fill ${className}`}></i>
+        );
+    },
     Search({ className, ...props }: any) {
         return (
             <i {...props} className={`bi bi-search ${className}`}></i>

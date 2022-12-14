@@ -14,7 +14,7 @@
 }
 
 .header-main {
-    @apply py-6;
+    @apply py-8;
     background: var(--bg-header)
 }
 .header-main-container {
@@ -24,8 +24,7 @@
     @apply items-center justify-between md:gap-4 md:flex;
 }
 .logo__img {
-    border-radius: 15px;
-    @apply mb-2 md:m-0 inline-block w-full max-w-[100px] h-full object-contain pr-2
+    @apply mb-2 md:m-0 inline-block w-full max-w-[150px] h-full object-contain pr-2
 }
 .logo__text {
     @apply text-center md:text-left;
@@ -41,10 +40,10 @@
 }
 
 .nav-menu .menu-list .menu-item {
-    @apply pl-6;
+    @apply pl-10;
 }
 .nav-menu .menu-list .menu-item-link {
-    @apply  text-lg duration-300;
+    @apply  text-lg font-bold duration-300;
     color: var(--text-menu);
 }
 .nav-menu .menu-list .menu-item:first-child {

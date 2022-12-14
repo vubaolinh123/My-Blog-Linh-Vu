@@ -44,6 +44,7 @@ const Header = ({infoWeb}: Props) => {
             <div className={styles["logo"]}>
               <Link href={`${path.public.rootRoute}`}>
                 <img
+                  style={{"width": infoWeb?.sizeLogoHeader}}
                   className={styles["logo__img"]}
                   src={infoWeb?.url}
                   alt=""

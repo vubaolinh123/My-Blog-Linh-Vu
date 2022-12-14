@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     <>
       <LayoutWrapper>
         <SWRConfig value={{ fetcher: async (url) => await instance.get(url) }}>
-           <HeadMeta title={"LV Blog"}/>
+           <HeadMeta title={"Blog Spun"}/>
           <Component {...pageProps} />
           <ToastContainer />
         </SWRConfig>

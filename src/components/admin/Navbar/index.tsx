@@ -6,6 +6,7 @@ import { Menu } from 'antd';
 import styles from './Navbar.module.css'
 import axios from "axios";
 import useColor from '../../../hooks/useColor';
+import Link from 'next/link';
 
 
 
@@ -38,7 +39,7 @@ const Navbar: React.FC = () => {
     <>
       <div className={styles['nav-container']}>
         <div className=""></div>
-        <div className=""></div>
+        <div className=""> </div>
         <div className={styles['nav-action']}>
           <span>{userAdmin?.user?.name}</span>
           <img className={styles['nav__img']} src={dataSettings?.url}  alt="" onClick={Logout}/>

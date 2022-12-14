@@ -22,8 +22,8 @@ const WebsiteColor = (props: Props) => {
   const [image, setImage] = useState("");
   const [selectedFile, setSelectedFile] = useState<any>();
   const [previewSource, setPreviewSource] = useState<any>();
-  const [colorInputText, setColorInputText] = useState();
-  const [bgTop, setBgTop] = useState();
+  const [sizeLogoHeader, setSizeLogoHeader] = useState("");
+  const [sizeLogoFooter, setSizeLogoFooter] = useState("");
   const { getAllColor, detail, edit, error } = useColor();
 
   const {
@@ -39,18 +39,19 @@ const WebsiteColor = (props: Props) => {
       const [dataSetting]: any = await getAllColor();
       setPreviewSource(dataSetting.url);
       reset(dataSetting);
-
+      setSizeLogoHeader(dataSetting?.sizeLogoHeader);
       if (document.querySelector<HTMLElement>(`#bgTop`) !== null) {
         document.querySelector<HTMLElement>(`#bgTop`)!.style.backgroundColor =
-          dataSetting?.bgTop; 
+          dataSetting?.bgTop;
       }
       if (document.querySelector<HTMLElement>(`#textTop`) !== null) {
         document.querySelector<HTMLElement>(`#textTop`)!.style.color =
           dataSetting?.textTop;
       }
       if (document.querySelector<HTMLElement>(`#bgHeader`) !== null) {
-        document.querySelector<HTMLElement>(`#bgHeader`)!.style.backgroundColor =
-          dataSetting?.bgHeader;
+        document.querySelector<HTMLElement>(
+          `#bgHeader`
+        )!.style.backgroundColor = dataSetting?.bgHeader;
       }
       if (document.querySelector<HTMLElement>(`#bgHeader2`) !== null) {
         document.querySelector<HTMLElement>(
@@ -90,8 +91,9 @@ const WebsiteColor = (props: Props) => {
           dataSetting?.textMenuHover;
       }
       if (document.querySelector<HTMLElement>(`#bgFooter`) !== null) {
-        document.querySelector<HTMLElement>(`#bgFooter`)!.style.backgroundColor =
-          dataSetting?.bgFooter;
+        document.querySelector<HTMLElement>(
+          `#bgFooter`
+        )!.style.backgroundColor = dataSetting?.bgFooter;
       }
       if (document.querySelector<HTMLElement>(`#textFooter`) !== null) {
         document.querySelector<HTMLElement>(`#textFooter`)!.style.color =
@@ -100,6 +102,15 @@ const WebsiteColor = (props: Props) => {
       if (document.querySelector<HTMLElement>(`#textLinkFooter`) !== null) {
         document.querySelector<HTMLElement>(`#textLinkFooter`)!.style.color =
           dataSetting?.textLinkFooter;
+      }
+      if (document.querySelector<HTMLElement>(`#bgFooterBottom`) !== null) {
+        document.querySelector<HTMLElement>(
+          `#bgFooterBottom`
+        )!.style.backgroundColor = dataSetting?.bgFooterBottom;
+      }
+      if (document.querySelector<HTMLElement>(`#textFooterBottom`) !== null) {
+        document.querySelector<HTMLElement>(`#textFooterBottom`)!.style.color =
+          dataSetting?.textFooterBottom;
       }
       if (document.querySelector<HTMLElement>(`#bgMain`) !== null) {
         document.querySelector<HTMLElement>(`#bgMain`)!.style.backgroundColor =
@@ -172,7 +183,8 @@ const WebsiteColor = (props: Props) => {
   const onHandleChangeColor = (key: string, event: any) => {
     if (document.querySelector<HTMLElement>(`#${key}`)) {
       if (key === "textMain") {
-        document.querySelector<HTMLElement>(`#${key}`)!.style.color = event.target.value
+        document.querySelector<HTMLElement>(`#${key}`)!.style.color =
+          event.target.value;
         document.querySelector<HTMLElement>(`#${key}2`)!.style.color =
           event.target.value;
       }
@@ -180,7 +192,14 @@ const WebsiteColor = (props: Props) => {
         event.target.value;
     }
   };
-  const indexColor = "";
+  const onHandleChangeSizeLogoHeader = (e: any) => {
+    console.log("event", e.target.value);
+    setSizeLogoHeader(e.target.value);
+  };
+  const onHandleChangeSizeLogoFooter = (e: any) => {
+    console.log("event", e.target.value);
+    setSizeLogoFooter(e.target.value);
+  };
 
   const onSubmit = async (data: any) => {
     try {
@@ -252,8 +271,23 @@ const WebsiteColor = (props: Props) => {
                       </div>
                     </div>
                     <div className={stylesAdmin["form-input-section"]}>
+                      <label className={stylesAdmin["form__label"]}>
+                        Kích thước logo chính
+                        <div className="ml-2 tooltip tooltip-warning" data-tip="Maximum 150px, lưu ý nhập kèm theo đơn vị">
+                          <Icon.QuestionCircleFill className="text-red-500"/>
+                        </div>
+                      </label>
+                      <input
+                        {...register("sizeLogoHeader")}
+                        onKeyUp={onHandleChangeSizeLogoHeader}
+                        placeholder="VD: 10px, 2rem,..."
+                        className={`border ${stylesAdmin["form__input"]}`}
+                      />
+                    </div>
+                    <div className={stylesAdmin["form-input-section"]}>
                       {previewSource ? (
                         <img
+                          style={{ width: sizeLogoHeader! }}
                           id="img-preview"
                           src={previewSource}
                           alt=""
@@ -262,6 +296,40 @@ const WebsiteColor = (props: Props) => {
                       ) : (
                         <img
                           id="img-preview"
+                          style={{ width: sizeLogoHeader! }}
+                          className={stylesAdmin["form__img"]}
+                          src="https://i.imgur.com/MV2djzI.png"
+                          alt=""
+                        />
+                      )}
+                    </div>
+                    <div className={stylesAdmin["form-input-section"]}>
+                      <label className={stylesAdmin["form__label"]}>
+                        Kích thước logo chân trang  
+                        <div className="ml-2 tooltip tooltip-warning" data-tip="Maximum 270px, lưu ý nhập kèm theo đơn vị">
+                          <Icon.QuestionCircleFill className="text-red-500"/>
+                        </div>
+                      </label>
+                      <input
+                        {...register("sizeLogoFooter")}
+                        onKeyUp={onHandleChangeSizeLogoFooter}
+                        placeholder="VD: 10px, 2rem,..."
+                        className={`border ${stylesAdmin["form__input"]}`}
+                      />
+                    </div>
+                    <div className={stylesAdmin["form-input-section"]}>
+                      {previewSource ? (
+                        <img
+                          style={{ width: sizeLogoFooter }}
+                          id="img-preview"
+                          src={previewSource}
+                          alt=""
+                          className={styles["setting__img-logo"]}
+                        />
+                      ) : (
+                        <img
+                          id="img-preview"
+                          style={{ width: sizeLogoFooter }}
                           className={stylesAdmin["form__img"]}
                           src="https://i.imgur.com/MV2djzI.png"
                           alt=""
@@ -495,6 +563,40 @@ const WebsiteColor = (props: Props) => {
                               />
                             </Tooltip>
                           </div>
+                          <div className={styles["setting-color-slice-item"]}>
+                            <label
+                              className={styles["setting-color-slice__label"]}
+                            >
+                              Màu nền chân trang dưới cùng
+                            </label>
+                            <Tooltip placement="top" title={"Chọn màu khác"}>
+                              <input
+                                type="color"
+                                {...register("bgFooterBottom")}
+                                onChange={(e) =>
+                                  onHandleChangeColorBg("bgFooterBottom", e)
+                                }
+                                className={styles["setting-color__input-color"]}
+                              />
+                            </Tooltip>
+                          </div>
+                          <div className={styles["setting-color-slice-item"]}>
+                            <label
+                              className={styles["setting-color-slice__label"]}
+                            >
+                              Màu chữ chân trang dưới cùng
+                            </label>
+                            <Tooltip placement="top" title={"Chọn màu khác"}>
+                              <input
+                                type="color"
+                                {...register("textFooterBottom")}
+                                onChange={(e) =>
+                                  onHandleChangeColor("textFooterBottom", e)
+                                }
+                                className={styles["setting-color__input-color"]}
+                              />
+                            </Tooltip>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -506,116 +608,34 @@ const WebsiteColor = (props: Props) => {
                 <h2 className="mb-0">Xem trước</h2>
                 <div className={styles["setting-ui-content"]}>
                   <div className="">
-                  <h4>Sửa Logo</h4>
-                  <div className={stylesAdmin["form-input-section"]}>
-                    <label className={stylesAdmin["form__label"]}>
-                      Tên Logo
-                    </label>
-                    <input
-                      // onKeyUp={(e) => createSlug(e)}
-                      {...register("text", {
-                        required: {
-                          value: true,
-                          message: "Yêu cầu nhập thông tin",
-                        },
-                        minLength: {
-                          value: 2,
-                          message: "Nhập tối thiểu 2 kí tự",
-                        },
-                      })}
-                      className={`border ${stylesAdmin["form__input"]}`}
-                    />
-                    <span className={stylesAdmin["form__text-error"]}>
-                    {errors?.text ? errors?.text.message as string : ""}
-                    </span>
-                  </div>
-                  <div className={stylesAdmin["form-input-section"]}>
-                    <label className={stylesAdmin["form__label"]}>
-                      Sub logo
-                    </label>
-                    <input
-                      // onKeyUp={(e) => createSlug(e)}
-                      {...register("subTextLogo", {
-                        required: {
-                          value: true,
-                          message: "Yêu cầu nhập thông tin",
-                        },
-                        minLength: {
-                          value: 2,
-                          message: "Nhập tối thiểu 2 kí tự",
-                        },
-                      })}
-                      className={`border ${stylesAdmin["form__input"]}`}
-                    />
-                    <span className={stylesAdmin["form__text-error"]}>
-                      {errors?.subTextLogo ? errors?.subTextLogo.message as string : ""}
-                    </span>
-                  </div>
-                  <div className={stylesAdmin["form-input-section"]}>
-                    <label className={stylesAdmin["form__label"]}>
-                      Link Facebook
-                    </label>
-                    <input
-                      // onKeyUp={(e) => createSlug(e)}
-                      {...register("urlFb", {
-                        required: {
-                          value: true,
-                          message: "Yêu cầu nhập thông tin",
-                        },
-                        minLength: {
-                          value: 2,
-                          message: "Nhập tối thiểu 2 kí tự",
-                        },
-                      })}
-                      className={`border ${stylesAdmin["form__input"]}`}
-                    />
-                    <span className={stylesAdmin["form__text-error"]}>
-                      {errors?.subTextLogo ? errors?.subTextLogo.message as string : ""}
-                    </span>
-                  </div>
-                  <div className={stylesAdmin["form-input-section"]}>
-                    <label className={stylesAdmin["form__label"]}>
-                      Link Youtube
-                    </label>
-                    <input
-                      // onKeyUp={(e) => createSlug(e)}
-                      {...register("urlYt", {
-                        required: {
-                          value: true,
-                          message: "Yêu cầu nhập thông tin",
-                        },
-                        minLength: {
-                          value: 2,
-                          message: "Nhập tối thiểu 2 kí tự",
-                        },
-                      })}
-                      className={`border ${stylesAdmin["form__input"]}`}
-                    />
-                    <span className={stylesAdmin["form__text-error"]}>
-                      {errors?.subTextLogo ? errors?.subTextLogo.message as string : ""}
-                    </span>
-                  </div>
-                  <div className={stylesAdmin["form-input-section"]}>
-                    <label className={stylesAdmin["form__label"]}>
-                      Giới thiệu website
-                    </label>
-                    <input
-                      {...register("intro", {
-                        required: {
-                          value: true,
-                          message: "Yêu cầu nhập thông tin",
-                        },
-                        minLength: {
-                          value: 2,
-                          message: "Nhập tối thiểu 2 kí tự",
-                        },
-                      })}
-                      className={`border ${stylesAdmin["form__input"]}`}
-                    />
-                    <span className={stylesAdmin["form__text-error"]}>
-                      {errors?.intro ? errors?.intro.message as string : ""}
-                    </span>
-                  </div>
+                    <h4>Sửa Logo</h4>
+                    <div className={stylesAdmin["form-input-section"]}>
+                      <label className={stylesAdmin["form__label"]}>
+                        Tên Logo
+                      </label>
+                      <input
+                        {...register("text")}
+                        className={`border ${stylesAdmin["form__input"]}`}
+                      />
+                    </div>
+                    <div className={stylesAdmin["form-input-section"]}>
+                      <label className={stylesAdmin["form__label"]}>
+                        Sub logo
+                      </label>
+                      <input
+                        {...register("subTextLogo")}
+                        className={`border ${stylesAdmin["form__input"]}`}
+                      />
+                    </div>
+                    <div className={stylesAdmin["form-input-section"]}>
+                      <label className={stylesAdmin["form__label"]}>
+                        Giới thiệu website
+                      </label>
+                      <input
+                        {...register("intro")}
+                        className={`border ${stylesAdmin["form__input"]}`}
+                      />
+                    </div>
                   </div>
                   <div className={styles["setting-ui-content-button"]}>
                     <h4>Màu button</h4>
@@ -817,8 +837,44 @@ const WebsiteColor = (props: Props) => {
                             Màu link chân trang
                           </p>
                         </div>
+                        <div
+                          id="bgFooterBottom"
+                          className={
+                            styles["setting-ui-content-view-footer-bottom"]
+                          }
+                        >
+                          <p
+                            id="textFooterBottom"
+                            className={
+                              styles[
+                                "setting-ui-content-view-footer-bottom-text-link"
+                              ]
+                            }
+                          >
+                            Màu chữ chân trang dưới cùng
+                          </p>
+                        </div>
                       </div>
                     </div>
+                  </div>
+                  <div className={stylesAdmin["form-input-section"]}>
+                    <label className={stylesAdmin["form__label"]}>
+                      Link Facebook
+                    </label>
+                    <input
+                      // onKeyUp={(e) => createSlug(e)}
+                      {...register("urlFb")}
+                      className={`border ${stylesAdmin["form__input"]}`}
+                    />
+                  </div>
+                  <div className={stylesAdmin["form-input-section"]}>
+                    <label className={stylesAdmin["form__label"]}>
+                      Link Youtube
+                    </label>
+                    <input
+                      {...register("urlYt")}
+                      className={`border ${stylesAdmin["form__input"]}`}
+                    />
                   </div>
                 </div>
               </div>

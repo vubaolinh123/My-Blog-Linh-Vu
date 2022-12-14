@@ -23,6 +23,8 @@
     --bg-footer: #e0e0e0;
     --text-footer: #000;
     --text-link-footer: #2e59b5;
+    --bg-footer-bottom: #e0e0e0;
+    --text-footer-bottom: #000;
 
     /* main */
     --bg-main: #f4f4f4;
@@ -36,6 +38,7 @@
     --aside-link: #2e59b5;
 
 }
+
 
 html,
 body {
