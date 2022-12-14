@@ -11,10 +11,7 @@
   @apply text-xl p-2
 }
 .setting__img-logo {
-  margin: auto;
-  max-width: 150px;
-  max-height: 150px;
-  object-fit: contain;
+  @apply object-contain w-full max-w-[150px] m-auto;
 }
 
 .setting-ui-content {
@@ -105,7 +102,7 @@
   @apply w-full h-20 bg-gray-800 flex justify-between items-center p-2
 }
 .setting-ui-content-view-header-img {
-  @apply object-cover w-16 h-16;
+  @apply object-contain w-16 h-16;
 }
 .setting-ui-content-view-header-logo {
   @apply flex justify-between items-center gap-1
@@ -123,8 +120,15 @@
   @apply p-3 flex justify-between items-center bg-gray-500
 }
 .setting-ui-content-view-footer-img {
-  @apply object-cover w-10 h-10;
+  @apply object-contain w-10 h-10;
 }
+.setting-ui-content-view-footer-bottom {
+  @apply bg-green-800
+}
+.setting-ui-content-view-footer-bottom-text-link {
+  @apply py-1 text-sm text-center text-white;
+}
+
 /* icon */
 .setting-ui-content-icon-item {
   @apply p-3 inline-flex justify-between items-center

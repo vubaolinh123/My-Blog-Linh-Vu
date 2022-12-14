@@ -9,11 +9,11 @@
     @apply grid gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.4fr_0.6fr_1fr]
 }
 .logo__img {
-    border-radius: 15px;
-    @apply w-20
+    @apply max-w-full object-contain
 }
 .footer-title {
-    @apply  mb-4 font-semibold uppercase text-xl text-[#464646]
+    @apply  mb-4 text-xl font-semibold uppercase;
+    color: var(--text-footer);
 }
 .footer-menu-item {
     @apply mb-4
@@ -34,5 +34,9 @@
     @apply mt-4
 }
 .footer-bottom {
-    @apply p-2 text-center bg-gray-400
+    @apply p-2 text-center;
+    background: var(--bg-footer-bottom)
+}
+.footer-bottom * {
+    color: var(--text-footer-bottom)
 }

@@ -21,10 +21,16 @@ const FormSearch = (props: Props) => {
       return;
     } else {
       let keyword = value.keyword.trim();
-      router.push({
-        pathname: `${path.public.rootRoute}/search`,
-        query: { keyword: `${keyword}` },
-      });
+      if(router.pathname != '/search'){
+        router.push({
+          pathname: `${path.public.rootRoute}/search`,
+          query: { keyword: `${keyword}` },
+        });
+      }else{
+        router.push({
+          query: { keyword: `${keyword}` }
+        });
+      }
       reset();
     window.scrollTo(0, 0)
 

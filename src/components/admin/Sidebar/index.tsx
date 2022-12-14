@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import {
   CalculatorOutlined,
+  ChromeOutlined,
   CommentOutlined,
   DashboardOutlined,
   FormOutlined,
@@ -82,6 +83,10 @@ const Sidebar: React.FC = () => {
     getItem("Thẻ", "sub4", <TagsOutlined />, [
       getItem(<Link href={path.private.tagBlogRouter}>Danh Sách</Link>, "6"),
       getItem(<Link href={path.private.tagBlogAddRoute}>Tạo Mới</Link>, "7"),
+    ]),
+    getItem("Social", "sub5", <ChromeOutlined />, [
+      getItem(<Link href={path.private.socialRouter}>Danh Sách</Link>, "11"),
+      getItem(<Link href={path.private.socialAddRouter}>Tạo Mới</Link>, "12"),
     ]),
     getItem(
       <Link href={path.private.commentRouter}>Bình Luận</Link>,

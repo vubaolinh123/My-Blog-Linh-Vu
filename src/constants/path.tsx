@@ -18,6 +18,7 @@ export const path = {
         menuAddRoute: "/admin/menu/add",
         bannerRoute: "/admin/banner",
         bannerAddRoute: "/admin/banner/add",
+        socialAddRouter: "/admin/social/add",
 
         blogRoute: "/admin/blog",
         blogAddRoute: "/admin/blog/add",
@@ -27,6 +28,7 @@ export const path = {
         tagBlogAddRoute: "/admin/tag/add",
         commentRouter: "/admin/binhluan",
         settingRouter: "/admin/setting",
+        socialRouter: "/admin/social",
       
     },
 };

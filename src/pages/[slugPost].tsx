@@ -2,7 +2,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { read as readBlog, relatedBlog } from "../api/blog";
@@ -49,10 +49,14 @@ const PageContentDetail: NextPage<DetailProps> = ({
     }
   };
 
+  useEffect(()=>{
+    
+  },[])
+
   return (
-    <div>
+    <div className={styles["detail-page"]}>
         <HeadMeta title={dataDetailBlog.title}/>
-        <PageHeader title={dataDetailBlog.title} />
+      <PageHeader title={dataDetailBlog.title} />
       <div className={styles["detail-content-section"]}>
         <div className={styles["detail-content-img"]}>
           <img

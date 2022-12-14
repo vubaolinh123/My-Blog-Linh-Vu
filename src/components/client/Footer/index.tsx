@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { getAll } from "../../../api/social";
 import DataMenu from "../../../constants/DataMenu";
 import { path } from "../../../constants/path";
 import useCateBlog from "../../../hooks/use-cateBlog";
@@ -14,19 +15,26 @@ type Props = {
 
 const Footer = ({infoWeb}: Props) => {
   const [dataBlogs, setDataBlog] = useState<any>();
+  const [dataSocial, setDataSocial] = useState<any>();
   const { detail, error } = useCateBlog();
   const dataMenu: any = DataMenu()
+  
   
   useEffect(() => {
     const getBlogOfCate = async () => {
       const data = await detail("bai-viet", 4);
+      const dataSocial: any = await getAll()
       setDataBlog(data);
+      const dataFilter = dataSocial.filter((item: { status: number; }) => item.status === 1)
+      setDataSocial(dataFilter)
     };
     getBlogOfCate();
+    
   }, []);
-  
+
   if (error) return <div>Failed to loading</div>;
   if(!detail) return <div>Loading...</div>
+
   return (
     <footer className={styles["footer"]}>
       <div className={`section-inside ${styles["footer-main"]}`}>
@@ -35,6 +43,7 @@ const Footer = ({infoWeb}: Props) => {
             <div className={styles["logo"]}>
               <Link href={path.public.rootRoute}>
                 <img
+                  style={{"width": infoWeb?.sizeLogoFooter}}
                   className={styles["logo__img"]}
                   src={infoWeb?.url}
                   alt=""
@@ -78,20 +87,15 @@ const Footer = ({infoWeb}: Props) => {
           <div className="">
             <h6 className={styles["footer-title"]}>Social Media</h6>
             <ul className={styles["footer-social-list"]}>
-              <li className={styles["footer-menu-item"]}>
+              { dataSocial?.map((item: any, index: any)=>(
+                <li className={styles["footer-menu-item"]} key={index}>
                 <Link href="">
-                  <a className={styles["footer-menu-item-link"]} onClick={()=>{ window.location = infoWeb?.urlFb}}>
-                    <Icon.Facebook className={styles["footer-social-icon"]} />
+                  <a className={styles["footer-menu-item-link"]} onClick={()=>{ window.location = item?.linkTo}}>
+                  <i className={item.urlIcon} style={{color: item.colorIcon, fontSize: item.sizeIcon}}></i> 
                   </a>
                 </Link>
               </li>
-              <li className={styles["footer-menu-item"]}>
-                <Link href="">
-                  <a className={styles["footer-menu-item-link"]} onClick={()=>{ window.location = infoWeb?.urlYt}}>
-                    <Icon.Youtube className={styles["footer-social-icon"]} />
-                  </a>
-                </Link>
-              </li>
+              ))}
             </ul>
             <div className={styles["footer-form-search"]}>
               <FormSearch />
@@ -103,7 +107,7 @@ const Footer = ({infoWeb}: Props) => {
         <span>© 2022 Copyright: </span>
         <a
           className="font-semibold text-gray-600"
-          href="https://tailwind-elements.com/"
+          href=""
         >
           Ann Anh
         </a>
