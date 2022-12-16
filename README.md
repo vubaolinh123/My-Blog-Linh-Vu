@@ -33,10 +33,12 @@ npm run build
 npm start
 ```
 ## Screenshots, Preview
+
 ![image](https://user-images.githubusercontent.com/73287503/208179133-10d4f66f-151a-4c0b-bc60-cee42ff32d99.png)
 
 Admin Setting 
-![image](https://user-images.githubusercontent.com/73287503/208179898-80ddc54b-5ace-4bee-9ea1-a90041720203.png)
+![image](https://user-images.githubusercontent.com/73287503/208180756-3092f748-a2ec-4594-8b2f-ab8b53b89cad.png)
+
 ## Summary
 👉 If you like this project, give it a star ✨ and share 👨🏻‍💻 it to your friends 👈
 
