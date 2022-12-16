@@ -1,4 +1,3 @@
-## This is my Blog
 
 ## Link Demo: https://blog.linkcualinh.com/
 
