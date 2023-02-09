@@ -252,7 +252,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         comments,
         related,
       },
-      revalidate: 60,
+      revalidate: 20,
     };
   } catch (error) {
     return {
