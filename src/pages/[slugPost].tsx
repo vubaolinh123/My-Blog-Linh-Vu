@@ -33,7 +33,6 @@ const PageContentDetail: NextPage<DetailProps> = ({
     reset
   } = useForm<any>();
   const [sendSuccess, setSendSuccess] = useState(false)
-
   const {add} = useComment()
   const onSubmit = async (data: any) => {
     try {
@@ -48,7 +47,6 @@ const PageContentDetail: NextPage<DetailProps> = ({
       toast.error(error.response.data.message)
     }
   };
-
   useEffect(()=>{
     
   },[])
@@ -241,10 +239,10 @@ const PageContentDetail: NextPage<DetailProps> = ({
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slugPost = params?.slugPost as string;
+  const slugPosts = params?.slugPost as string;
   try {
-    const dataDetailBlog : any= await readBlog(slugPost);
-    const related: any = await relatedBlog(slugPost);
+    const dataDetailBlog : any= await readBlog(slugPosts);
+    const related: any = await relatedBlog(slugPosts);
     const comments = dataDetailBlog.comment.filter((item: any) => item.status === 1);
     return {
       props: {
